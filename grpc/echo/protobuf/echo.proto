@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option go_package = "github.com/nujz/examples-go/grpc/echo/protobuf";
+
+// package protobuf;
+
+service EchoService { rpc test(EchoRequest) returns (EchoResponse); }
+
+message EchoRequest { string msg = 1; }
+
+message EchoResponse { string msg = 1; }
