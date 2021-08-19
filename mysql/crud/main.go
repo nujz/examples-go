@@ -28,6 +28,7 @@ func checkError(err error) {
 func main() {
 	db, err := sql.Open("mysql", "test@/test?charset=utf8")
 	checkError(err)
+	// defer db.Close()
 
 	st, err := db.Prepare("INSERT INTO `user` SET `username`=?,created_at=?")
 	checkError(err)

@@ -37,6 +37,7 @@ func checkError(err error) {
 func main() {
 	db, err := sql.Open("mysql", "test@/test?charset=utf8")
 	checkError(err)
+	// db.Close()
 
 	st, err := db.Prepare("insert into `user`(`username`) select ? from `__uniqsert` where `id` = 1 and not exists (select `id` from `user` where `username` = ?)")
 	checkError(err)
