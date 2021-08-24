@@ -40,7 +40,7 @@ func main() {
 
 	st1, err := db.Prepare("SELECT `username`,`created_at` FROM `user` WHERE id = ?")
 	checkError(err)
-	rows, err := st1.Query("1 or 1")
+	rows, err := st1.Query("1 or 1 = 1")
 	checkError(err)
 
 	for rows.Next() {
