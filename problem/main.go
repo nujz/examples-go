@@ -31,7 +31,9 @@ func logic1() error {
 
 func logic2() {
 	err := logic1()
-	if err != nil {
+
+	// if fmt.Sprint(err) != "<nil>" { // ???
+	if err != nil { // typed nil != untyped nil
 		fmt.Println("1", err) // 运行到这里
 		return
 	}
